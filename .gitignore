@@ -1,0 +1,4 @@
+node_modules/
+dist/
+# Source PDFs (~340 MB) — re-download with tools/download.sh
+raw/
