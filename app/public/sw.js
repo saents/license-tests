@@ -1,7 +1,7 @@
 // Offline support. Images are content-hashed -> cache-first forever.
 // Question JSON and the app shell -> stale-while-revalidate (instant load, updates in background).
 const IMG = 'viv-img-v1';
-const APP = 'viv-app-v1';
+const APP = 'viv-app-v2';
 
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', (e) => {

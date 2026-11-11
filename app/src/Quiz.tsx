@@ -116,7 +116,7 @@ export function Quiz({ mode, arg, bank, set, t }: Props) {
       if (isExam) return;
       const ok = opt === q.a;
       record(id, ok);
-      if (ok) {
+      if (ok && !q.x) { // with an explanation to read, wait for the user to move on
         autoTimer.current = window.setTimeout(() => {
           if (idx < refs.length - 1) go(idx + 1);
         }, AUTO_NEXT_MS);
@@ -311,6 +311,11 @@ function QuestionView({ q, chosen, reveal, onChoose, onZoom }: {
           );
         })}
       </ol>
+      {reveal && q.x && (
+        <p class="explain">
+          <span aria-hidden="true">💡</span> {q.x}
+        </p>
+      )}
     </article>
   );
 }

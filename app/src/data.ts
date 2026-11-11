@@ -2,8 +2,8 @@ import { useEffect, useState } from 'preact/hooks';
 import type { Lang } from './i18n';
 import type { SetId } from './store';
 
-/** n = number within group, q = text, o = options, a = correct option (1-based), i/w/h = image file + size. */
-export type Question = { n: number; q: string; o: string[]; a: number; i?: string; w?: number; h?: number };
+/** n = number within group, q = text, o = options, a = correct option (1-based), i/w/h = image file + size, x = explanation. */
+export type Question = { n: number; q: string; o: string[]; a: number; i?: string; w?: number; h?: number; x?: string };
 export type Group = { g: number; qs: Question[] };
 export type Bank = Group[];
 

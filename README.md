@@ -12,6 +12,7 @@ Questions, answers and images were extracted from the official question bank at
 | D·T   | 10     | 1380      | 796         |
 
 ## Features
+- **Explanations**: every question has a short explanation (hy/ru/en) of why the official answer is correct, shown after you answer and in the exam review. They were AI-written from the official answer and picture, not taken from an official source, so treat them as study aids.
 - **Exam simulation**: 20 questions (2 from each group), 30-minute timer, pass with at most 2 mistakes, then a review of your errors
 - **Practice by group**: instant feedback, resumes where you stopped, optional shuffle
 - **Marathon**: all questions, wrong ones first, then unanswered, then the rest
@@ -30,6 +31,7 @@ tools/               extraction scripts (Node)
   download.sh        downloads the 60 source PDFs into raw/pdf
   extract.mjs        PDF -> JSON + WebP images
   finalize.mjs       adds image dimensions
+  merge-explain.mjs  merges generated explanations into the question files (field `x`)
 .github/workflows/   GitHub Pages deployment
 raw/                 source PDFs (git-ignored)
 ```
